@@ -1,6 +1,6 @@
 .machine-container {
     display: flex;
-    width: 100%;
+    width: 950px;
     height: 350px;
     border: 1px solid black;
     border-radius: 5px;
