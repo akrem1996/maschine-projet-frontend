@@ -27,10 +27,12 @@ export const fetchError = () => ({
 
 
 export const getMaschine = () => (dispatch) => {
-    dispatch(fetchStart())
-    axios.get("http://localhost:8000/maschine",{headers: {
-        'Access-Control-Allow-Origin': true,
-    }})
+   /* {
+        headers: {
+            token: localStorage.getItem('token')
+        }
+    }*/
+    axios.get("http://localhost:8000/maschine")
     .then((response) => {
         dispatch(fetchSuccess(response.data))
     })

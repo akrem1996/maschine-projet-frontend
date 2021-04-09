@@ -9,7 +9,7 @@ import EqualizerIcon from '@material-ui/icons/Equalizer';
 const menuElement= [
         {
                 title:'Home',
-                link: '/',
+                link: '/Home',
                 icon: <HomeIcon />
         } ,
         {

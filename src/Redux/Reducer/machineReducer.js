@@ -11,9 +11,7 @@ const machineReducer = (state = initialState, action) => {
         case machinesActionsTypes.FETCH_SUCCESS:
             return{...state,machine: [...action.data], loading: false}
         case machinesActionsTypes.FETCH_LIVE_MACHINE:
-            console.log(action.data)
             const newMachine = [...state.machine,action.data]
-            console.log(newMachine)
                 return{...state,machine: newMachine}
         default: 
             return state

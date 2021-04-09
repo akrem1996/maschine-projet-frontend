@@ -6,7 +6,7 @@ import './styles.css';
     class Charts extends React.Component {
         render () {
             const allMachines=this.props.machineList.map(function (obj) {
-                return obj.modelName;
+                return obj.modelDisplayName;
               });
             const stateMachine=this.props.machineList.map(function (obj) {
                 return obj.state;

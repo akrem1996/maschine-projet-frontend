@@ -1,4 +1,9 @@
 import React from "react";
+import {connect} from "react-redux";
+import socketIOClient from "socket.io-client";
+import {getMaschine,  fetchLiveMachine} from "../../Redux/Actions/machineAction";
+import { withRouter } from 'react-router-dom';
+
 import "./styles.css";
 
 import MachineItem from "../MachineItem/MachineItem";
@@ -6,6 +11,15 @@ import MachineItem from "../MachineItem/MachineItem";
 class MachineList extends React.Component {
 
   state = { show: "all" };
+
+  componentDidMount(){
+    const ENDPOINT = "http://127.0.0.1:8000";
+    const socket = socketIOClient(ENDPOINT);
+    socket.on("sendMessage", data => {
+      this.props.getLiveMachine(data)
+    });
+    this.props.getMaschineAction();
+  }
 
   handleShow(activatedPart) {
     return this.setState({
@@ -70,4 +84,17 @@ class MachineList extends React.Component {
   }
 }
 
-export default MachineList;
+const mapDispatchToProps = dispatch => {
+  return {
+    getMaschineAction: () => dispatch(getMaschine()),
+    getLiveMachine : (data) => dispatch(fetchLiveMachine(data))
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    maschineList: state.machines.machine,
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps) (withRouter(MachineList));
