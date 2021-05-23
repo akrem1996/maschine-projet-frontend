@@ -6,7 +6,7 @@ import MachineItem from "../MachineItem/MachineItem";
 import "./styles.css";
 
 
-class Classification extends React.Component {
+class ClassificationList extends React.Component {
 
   render() {
     return (
@@ -38,4 +38,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps) (withRouter(Classification));
+export default connect(mapStateToProps,mapDispatchToProps) (withRouter(ClassificationList));

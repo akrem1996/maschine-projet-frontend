@@ -6,7 +6,7 @@ import "./styles.css";
 
 import MachineItem from "../MachineItem/MachineItem";
 
-class MachineList extends React.Component {
+class StateList extends React.Component {
 
   render() {
     return (
@@ -37,4 +37,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps) (withRouter(MachineList));
+export default connect(mapStateToProps,mapDispatchToProps) (withRouter(StateList));

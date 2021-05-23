@@ -4,13 +4,13 @@ import './styles.css';
 
 import NavBar from "../NavBar/NavBar";
 import Menu from "../Menu/Menu"
-import MachineList from "../MachineList/MachineList";
+import StateList from "../StateList/StateList";
 
 const ShowState =()=><div> 
     <NavBar />
         <div className='wrapper'>
             <Menu />
-            <MachineList />                     
+            <StateList />                     
         </div>
     </div>;
 

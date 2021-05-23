@@ -10,12 +10,11 @@ const machineReducer = (state = initialState, action) => {
             return{...state,error: true, loading: false}
         case machinesActionsTypes.FETCH_LIVE_MACHINE:
             const newMachine = [...state.machine,action.data]
-            const element = state.machine.find(obj => obj.modelDisplayName === action.data.modelDisplayName)
+            const element = state.machine.find(obj => obj.modelName === action.data.modelName)
             if(!element){
                 return{...state,machine: newMachine}
             } else {
-                const machines = state.machine.filter(obj => obj.modelDisplayName !== element.modelDisplayName)
-                console.log(machines)
+                const machines = state.machine.filter(obj => obj.modelName !== element.modelName)
                 return {...state,machine:[...machines,action.data]}
             }        
         default: 

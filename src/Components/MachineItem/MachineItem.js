@@ -7,14 +7,14 @@ const MachineItem = ({ type, machine }) => {
     <div className="card-container">
       {type === "state" ?  
       <div>
-        <span> modelDisplayName: {machine.modelDisplayName} </span><br />
         <span> modelName: {machine.modelName} </span><br />
+        <span> modelDisplayName: {machine.modelDisplayName} </span><br />
         <span> state: {machine.state} </span><br />
         <img src={machine.icon} width="80px" heigth="80px"/>
       </div>
       :
       <div>
-        <span> modelDisplayName: {machine.modelDisplayName} </span><br />
+        <span> modelName: {machine.modelName} </span><br />
         <span> classification: {machine.classification} </span><br />
         <span> classProbability: {machine.classProbability} </span><br />
         <span> classIndex: {machine.classIndex} </span>

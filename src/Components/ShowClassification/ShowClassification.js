@@ -4,13 +4,13 @@ import './styles.css';
 
 import NavBar from "../NavBar/NavBar";
 import Menu from "../Menu/Menu"
-import Classification from "../ClassificationList/Classification"
+import ClassificationList from "../ClassificationList/ClassificationList"
 
 const ShowClassification =()=><div> 
     <NavBar />
         <div className='wrapper'>
             <Menu />
-            <Classification />                   
+            <ClassificationList />                   
         </div>
     </div>;
 
