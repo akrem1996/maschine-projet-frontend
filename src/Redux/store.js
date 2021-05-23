@@ -15,7 +15,7 @@ const rootReducer = (history) => combineReducers({
      signup: authReducer
   })
 
-  export const history = createBrowserHistory();
+export const history = createBrowserHistory();
   
 const devToolsName = '__REDUX_DEVTOOLS_EXTENSION__';
 const devTools = window[devToolsName] ? window[devToolsName]() : (f) => f;

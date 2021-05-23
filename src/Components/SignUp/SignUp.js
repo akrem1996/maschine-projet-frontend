@@ -37,6 +37,7 @@ function SignUp (props){
                     <label> Password </label>
                     <input type="password" placeholder="Password"   onChange={handlePasswordChange}/>
                     <button type="submit" className="button"> Sign up </button>
+                    {props.isRegistered && <p style={{ color: 'green' }}> User Registration Successful! Please Login </p>}
                 </form>  
             </div>
             </div> 
@@ -52,6 +53,7 @@ const mapDispatchToProps = dispatch => {
   
 const mapStateToProps = (state) => {
     return {
+        isRegistered: state.signup.isRegistered
     }
 }
 

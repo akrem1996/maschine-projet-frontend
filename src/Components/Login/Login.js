@@ -27,15 +27,16 @@ function Login (props) {
 
     return (  
         <div>
-        <NavBar name="authontification"/>  
-        <div className="Login-wrapper">
-                    <h3>Login</h3>
-                    <label> User Name </label>
-                    <input type="text" placeholder="User Name" onChange={handleNameChange}/>
-                    <label> Password </label>
-                    <input type="text" placeholder="Password" onChange={handlePasswordChange}/>
-                    <button type="submit" className="button" onClick = {(e) => handleSubmit(e)}> Login </button>
-        </div>
+            <NavBar name="authontification"/>  
+            <div className="Login-wrapper">
+                <h3>Login</h3>
+                <label> User Name </label>
+                <input type="text" placeholder="User Name" onChange={handleNameChange}/>
+                <label> Password </label>
+                <input type="password" placeholder="Password" onChange={handlePasswordChange}/>
+                <button type="submit" className="button" onClick = {(e) => handleSubmit(e)}> Login </button>
+                {props.error && <p style={{ color: 'red' }}> check your Username and Password Please </p>}
+            </div>
         </div>
     )
 }
@@ -46,8 +47,10 @@ const mapDispatchToProps = dispatch => {
 }
   
 const mapStateToProps = (state) => { 
+    console.log(state.signup.error)
     return {
-        username: state.signup.user.name,
+        username: state.signup.username,
+        error: state.signup.error
     }
 }
 

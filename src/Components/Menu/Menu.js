@@ -4,24 +4,18 @@ import Element from '../Element/Element';
 
 import HomeIcon from '@material-ui/icons/Home';
 import VisibilityIcon from '@material-ui/icons/Visibility';
-import EqualizerIcon from '@material-ui/icons/Equalizer';
 
 const menuElement= [
         {
-                title:'Home',
-                link: '/Home',
+                title:'Show Classification',
+                link: '/ShowClassification',
                 icon: <HomeIcon />
         } ,
         {
-                title:'Show Machines',
-                link: '/ShowMachines',
+                title:'Show State',
+                link: '/ShowState',
                 icon: <VisibilityIcon />
-        } ,
-        {
-                title:'Charts',
-                link: '/Charts',
-                icon: <EqualizerIcon />
-        } 
+        }
 ]
 
 const Menu =({})=>(

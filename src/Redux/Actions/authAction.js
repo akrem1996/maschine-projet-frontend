@@ -6,9 +6,8 @@ export const AuthActionsTypes = {
     FETCH_SIGNUP:"FETCH_SIGNUP",
     FETCH_LOGIN: "FETCH_LOGIN",
     FETCH_ERROR:"FETCH_ERROR",
+    FETCH_LOGOUT: "FETCH_LOGOUT"
 }
-
-
 
 export const fetchSignup = (data) => ({
     type: AuthActionsTypes.FETCH_SIGNUP,
@@ -25,6 +24,11 @@ export const fetchError = () => ({
     type: AuthActionsTypes.FETCH_ERROR
 }); 
 
+export const fetchLogout = () => ({
+    type: AuthActionsTypes.FETCH_LOGOUT
+}); 
+
+
  export const registerAction = (userState) => (dispatch) => {
      try{
         axios.post("http://localhost:8000/subscribe",userState)
@@ -33,16 +37,17 @@ export const fetchError = () => ({
         dispatch(fetchError())
      }    
  }
+ 
  export const loginAction = (userState) => (dispatch) => {
     axios.post("http://localhost:8000/login",userState)
     .then((response) => {
         const data = response.data.accessToken
         dispatch(fetchLogin(data , userState))
         localStorage.setItem('token',data)
-        return dispatch(push("/Showmachines"))
+        localStorage.setItem('username',userState.name)
+        return dispatch(push("/ShowClassification"))
     })
     .catch(() => {
-        console.log('aaaaaa')
         return dispatch(fetchError())
     })
 }

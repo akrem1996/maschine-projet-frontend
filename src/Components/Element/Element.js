@@ -1,11 +1,11 @@
 import React from "react";
-
+import {history} from '../../Redux/store'
 import "./styles.css";
 
 const Element = ({ label, key }) => (
   <div
     onClick={() => {
-      window.location.href = label.link;
+      history.push(label.link);
     }}
     key={key}
     className="element"

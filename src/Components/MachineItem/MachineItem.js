@@ -1,13 +1,25 @@
 import React from "react";
 import "./styles.css";
 
-const MachineItem = ({ machine }) => {
+const MachineItem = ({ type, machine }) => {
   return (
+
     <div className="card-container">
-      <span> modelDisplayName: {machine.modelDisplayName} </span><br />
-      <span> modelName: {machine.modelName} </span><br />
-      <span> classification: {machine.classification} </span><br />
-      <span> icon: {machine.icon} </span>
+      {type === "state" ?  
+      <div>
+        <span> modelDisplayName: {machine.modelDisplayName} </span><br />
+        <span> modelName: {machine.modelName} </span><br />
+        <span> state: {machine.state} </span><br />
+        <img src={machine.icon} width="80px" heigth="80px"/>
+      </div>
+      :
+      <div>
+        <span> modelDisplayName: {machine.modelDisplayName} </span><br />
+        <span> classification: {machine.classification} </span><br />
+        <span> classProbability: {machine.classProbability} </span><br />
+        <span> classIndex: {machine.classIndex} </span>
+      </div>
+      }
     </div>
   );
 };
